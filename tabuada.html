@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada!</title>
+</head>
+
+
+<style>
+     body{
+        background: rgb(234, 240, 255) ;
+        font: normal 15pt Timenews;
+    }
+    
+    header{
+        color: rgb(0, 0, 0);
+        text-align: center;
+    }
+    
+    section{
+        background-color: rgb(199, 209, 240) ;
+        border-radius: 10px;
+        padding: 15px;
+        width: 500px;
+        margin:auto;
+        box-shadow: 5px 5px 10px rgba(3, 3, 3, 0.326);
+    }
+    div{
+        text-align: center;
+        padding: 10px;
+    }
+    
+    footer{
+        color:rgb(37, 95, 81);
+        text-align: center;
+        font-style: italic;
+    }
+
+</style>
+
+<body>
+<header>
+    <h1>Tabuada</h1>
+</header>
+ 
+<section>
+    <div>
+        <p> Numero: <input type="number" name="num" id ="txtn">
+        <input type = "button" value="Gerar Tabuada" onclick="tabuada()"> </p>
+    </div>
+    <div>
+        
+        <select name="tabuada" id="sectabu" size="10">
+            <option>Digite um número acima!</option>
+        </select>
+        
+    </div>
+</section>
+<footer>
+    <p>&copy; AléxiaDias</p>
+</footer>
+<script>
+    function tabuada(){
+        var num = document.getElementById('txtn')
+        var tab = document.getElementById('sectabu')
+        if(num.value.length == 0){
+            window.alert("Por favor, informe um número! ")
+        }else{
+            var n = Number(num.value)
+            var c =1
+            tab.innerHTML= ""
+            while (c<=10){
+                var item = document.createElement('option')
+                item.text= `${n} x ${c}= ${n*c}`
+                item.value = `tab ${c}`
+                tab.appendChild(item)
+                c++
+            }
+        }
+        
+    }
+</script>      
+</body>
+</html>
