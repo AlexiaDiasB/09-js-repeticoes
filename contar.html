@@ -61,13 +61,13 @@
 <script>
     function contar(){
         var ini= document.getElementById("txt")
-        var fim= document.getElementById ("txtf")
-        var pas= document.getElementById ("txtp")
-        var res= document.getElementById ("res")
+        var fim= document.getElementById("txtf")
+        var pas= document.getElementById("txtp")
+        var res= document.getElementById("res")
 
         if(ini.value.length==0 || fim.value.length == 0 ||pas.value.length == 0) {
             window.alert('[ERRO] Faltam dados')
-           //** res.innerHTML = 'Impossivel contar!'
+            res.innerHTML = 'Impossivel contar!'
         } else {
             res.innerHTML= 'Contando:'
             let i = Number(ini.value)
@@ -83,7 +83,7 @@
                 //res.innerHTML += `${c} \u{1F449}`
             }
             }else{
-                for(var c = 1; c >= f; c -= p){
+                for(var c = i; c >= f; c -= p){
                     res.innerHTML += ` ${c} \u{1FAE1}` 
                 }
 
